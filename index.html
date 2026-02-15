@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SJ Kanish | AI & ML Engineer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            colors: {
+              // Light Mode (Ivory & Earth)
+              ivory: '#FAFAF7',
+              manilla: '#EBDBBC',
+              
+              // Dark Mode (Warm Obsidian / Anthropic Style)
+              'slate-dark': '#0C0A09',   // Stone 950 - Deep Warm Background
+              'slate-medium': '#1C1917', // Stone 900 - Warm Card Background
+              'slate-light': '#292524',  // Stone 800 - Warm Borders
+              'slate-900': '#1C1917',    // Mapping to Card BG for consistency in components
+              
+              // Semantic Colors
+              primary: '#FAFAF9',   // Stone 50 (High Emphasis)
+              secondary: '#A8A29E', // Stone 400 (Medium Emphasis)
+              tertiary: '#57534E',  // Stone 600 (Low Emphasis)
+              
+              // Accents
+              'book-cloth': '#CC785C',
+              'book-cloth-dark': '#A0553D',
+              'gold-tech': '#FBBF24',
+              'gold-soft': '#F59E0B',
+            },
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+              serif: ['Playfair Display', 'serif'],
+            },
+            animation: {
+              'fade-in-up': 'fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards',
+              'scale-in': 'scaleIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards',
+            },
+            keyframes: {
+              fadeInUp: {
+                '0%': { opacity: 0, transform: 'translateY(20px)' },
+                '100%': { opacity: 1, transform: 'translateY(0)' },
+              },
+              scaleIn: {
+                '0%': { opacity: 0, transform: 'scale(0.95)' },
+                '100%': { opacity: 1, transform: 'scale(1)' },
+              },
+            },
+          },
+        },
+      };
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+      :root {
+        /* Light Mode Defaults */
+        --glass-bg: rgba(216, 216, 216, 0.7);
+        --glass-border: rgba(255, 255, 255, 0.6);
+        --glass-shadow: 0 20px 40px -15px rgba(0,0,0,0.05);
+        --scroll-thumb: #D1D5DB;
+        --scroll-track: #FAFAF7;
+      }
+      .dark {
+        /* Dark Mode (Warm Obsidian) */
+        --glass-bg: rgba(28, 25, 23, 0.8); /* Stone 900 with opacity */
+        --glass-border: rgba(255, 255, 255, 0.08);
+        --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+        --scroll-thumb: #44403C; /* Stone 700 */
+        --scroll-track: #0C0A09;
+      }
+
+      body {
+        transition: background-color 0.3s ease, color 0.3s ease;
+      }
+
+      /* Floating Glass Utilities */
+      .glass-nav {
+        background: var(--glass-bg);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border-bottom: 1px solid var(--glass-border);
+        transition: background-color 0.3s ease, border-color 0.3s ease;
+      }
+      .glass-card {
+        background: var(--glass-bg);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+        border: 1px solid var(--glass-border);
+        box-shadow: var(--glass-shadow);
+        transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease, background-color 0.3s ease, border-color 0.3s ease;
+      }
+      .glass-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 25px 50px -12px rgba(204, 120, 92, 0.15);
+        border-color: #CC785C;
+      }
+      .glass-modal {
+        background: var(--glass-bg);
+        border: 1px solid var(--glass-border);
+      }
+
+      /* Custom Scrollbar */
+      ::-webkit-scrollbar {
+        width: 6px;
+      }
+      ::-webkit-scrollbar-track {
+        background: var(--scroll-track);
+      }
+      ::-webkit-scrollbar-thumb {
+        background: var(--scroll-thumb);
+        border-radius: 3px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #CC785C;
+      }
+      
+      /* Smooth Scrolling */
+      html {
+        scroll-behavior: smooth;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://esm.sh/react@^19.2.4/",
+    "react": "https://esm.sh/react@^19.2.4",
+    "react-dom": "https://esm.sh/react-dom@^19.2.4",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
+    "react-router-dom": "https://esm.sh/react-router-dom@^7.13.0"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body class="bg-ivory dark:bg-slate-dark text-slate-900 dark:text-secondary">
+    <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>

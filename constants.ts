@@ -161,6 +161,51 @@ export const CERTIFICATIONS: Certification[] = [
     ]
   },
   {
+    id: 'infosys-python-2025',
+    name: 'Basics of Python',
+    issuer: 'Infosys Springboard',
+    date: 'Aug 2025',
+    image: '/infosys.jpeg',
+    skills: ['Python', 'Programming', 'Data Structures', 'Infosys'],
+    description: 'Successfully completed the comprehensive course on the Basics of Python, covering fundamental programming concepts, syntax, and core data structures through the Infosys Springboard platform.',
+    link: '#',
+    meta: [
+      { label: 'Issued on', value: 'August 15, 2025' },
+      { label: 'Issuer', value: 'Infosys Limited' },
+      { label: 'Program', value: 'Infosys Springboard' }
+    ]
+  },
+  {
+    id: 'iste-member-2025',
+    name: 'ISTE Student Membership',
+    issuer: 'ISTE',
+    date: 'Jul 2025',
+    image: '/iste.jpeg',
+    skills: ['Professional Development', 'Technical Education', 'Networking'],
+    description: "Granted Student Membership in The Indian Society for Technical Education (ISTE), recognizing affiliation with Sona College of Technology and commitment to professional excellence in technical education.",
+    link: '#',
+    meta: [
+      { label: 'Membership No', value: '2735' },
+      { label: 'Validity', value: '2025 - 2029' },
+      { label: 'SC Code', value: 'TN345' }
+    ]
+  },
+  {
+    id: 'learntube-cyber-2025',
+    name: 'Cybersecurity Assessment',
+    issuer: 'LearnTube.ai',
+    date: 'Aug 2025',
+    image: '/learntube.jpeg',
+    skills: ['Cybersecurity', 'Network Security', 'Threat Assessment', 'AI Learning'],
+    description: 'Successfully completed the Cybersecurity Assessment certified by LearnTube.ai, validating skills in identifying security vulnerabilities and understanding core cybersecurity frameworks.',
+    link: '#',
+    meta: [
+      { label: 'ID', value: 'DJA-B-1-1592013-0' },
+      { label: 'Issued on', value: 'August 17, 2025' },
+      { label: 'Format', value: 'Advanced Skills Assessment' }
+    ]
+  },
+  {
     id: 'sona-titans-2025',
     name: 'Sona Titans – Training Participation',
     issuer: 'Sona College of Technology',

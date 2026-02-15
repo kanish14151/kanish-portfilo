@@ -17,7 +17,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, onClick }) => {
     if (project.images && project.images.length > 1) {
       const interval = setInterval(() => {
         setCurrentImageIndex((prev) => (prev + 1) % project.images!.length);
-      }, 5000); // 5 seconds interval for professional corporate feel
+      }, 300); // 0.3 seconds interval for rapid-fire feel
       return () => clearInterval(interval);
     }
   }, [project.images]);
@@ -66,7 +66,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, onClick }) => {
                 key={img}
                 src={img}
                 alt={project.title}
-                className={`absolute inset-0 w-full h-full object-cover transition-all duration-[2000ms] ease-[cubic-bezier(0.4,0,0.2,1)] will-change-transform ${idx === currentImageIndex
+                className={`absolute inset-0 w-full h-full object-cover transition-all duration-[300ms] ease-out will-change-transform ${idx === currentImageIndex
                   ? 'opacity-100 translate-x-0 scale-110'
                   : 'opacity-0 translate-x-12 scale-100'
                   }`}
@@ -132,7 +132,7 @@ const ProjectDetail: React.FC<{ project: Project }> = ({ project }) => {
     if (project.images && project.images.length > 1) {
       const interval = setInterval(() => {
         setCurrentImageIndex((prev) => (prev + 1) % project.images!.length);
-      }, 5000); // Corrected to 5 seconds for elegant feel
+      }, 300); // 0.3 seconds interval for rapid-fire feel
       return () => clearInterval(interval);
     }
   }, [project.images]);
@@ -153,7 +153,7 @@ const ProjectDetail: React.FC<{ project: Project }> = ({ project }) => {
                 key={img}
                 src={img}
                 alt={project.title}
-                className={`absolute inset-0 w-full h-full object-contain transition-all duration-[2500ms] ease-[cubic-bezier(0.4,0,0.2,1)] ${idx === currentImageIndex
+                className={`absolute inset-0 w-full h-full object-contain transition-all duration-[300ms] ease-out ${idx === currentImageIndex
                   ? 'opacity-100 scale-110 translate-x-0'
                   : 'opacity-0 scale-100 translate-x-12'
                   }`}

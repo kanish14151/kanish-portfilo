@@ -131,56 +131,6 @@ export const CERTIFICATIONS: Certification[] = [
     ]
   },
   {
-    id: 'cybersecurity-awareness',
-    name: 'Cybersecurity Awareness',
-    issuer: 'Community Security Initiative',
-    date: '2026',
-    image: 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=2070&auto=format&fit=crop',
-    skills: ['Security', 'Education'],
-    description: 'Educating communities about cybersecurity threats and prevention strategies through specialized training programs.',
-    link: '#'
-  },
-  {
-    id: 'python-basics',
-    name: 'Python Basics Certificate',
-    issuer: 'Infosys | Springboard',
-    date: 'August 2025',
-    image: 'https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?q=80&w=2070&auto=format&fit=crop',
-    skills: ['Python', 'Programming', 'Data Structures'],
-    description: 'Comprehensive course covering Python fundamentals, syntax, data structures, and basic programming concepts.',
-    link: '#'
-  },
-  {
-    id: 'kali-linux-fundamentals',
-    name: 'Kali Linux Fundamentals Certificate',
-    issuer: 'VOIS',
-    date: 'July 2025',
-    image: 'https://images.unsplash.com/photo-1629654297299-c8506221ca97?q=80&w=1974&auto=format&fit=crop',
-    skills: ['Kali Linux', 'Linux', 'Cybersecurity'],
-    description: 'Foundational course on Kali Linux, covering installation, basic commands, and security testing tools.',
-    link: '#'
-  },
-  {
-    id: 'phishing-attacks',
-    name: 'Phishing Attacks Certificate',
-    issuer: 'VOIS',
-    date: 'July 2025',
-    image: 'https://images.unsplash.com/photo-1563986768609-322da13575f3?q=80&w=2070&auto=format&fit=crop',
-    skills: ['Phishing', 'Cybersecurity', 'Threat Detection'],
-    description: 'Specialized course covering phishing attack techniques, detection methods, and prevention strategies.',
-    link: '#'
-  },
-  {
-    id: 'iste-membership',
-    name: 'ISTE Student Membership',
-    issuer: 'Indian Society for Technical Education',
-    date: 'July 2025 - July 2029',
-    image: 'https://images.unsplash.com/photo-1523240715629-66f77b2f1ed7?q=80&w=2070&auto=format&fit=crop',
-    skills: ['Student Membership', 'Technical Education', 'Professional Development'],
-    description: 'Official student membership certificate from ISTE, recognizing affiliation with SONA COLLEGE OF TECHNOLOGY.',
-    link: '#'
-  },
-  {
     id: 'sona-titans-2025',
     name: 'Sona Titans – Training Participation',
     issuer: 'Sona College of Technology',
@@ -214,32 +164,5 @@ export const CERTIFICATIONS: Certification[] = [
     skills: ['Art', 'Youth'],
     description: 'Empowering young artists through the VARNAM National Painting Competition, providing a platform for creative expression and recognition.',
     link: '#'
-  },
-  {
-    id: '1',
-    name: 'TensorFlow Developer Certificate',
-    issuer: 'Google',
-    date: 'Aug 2025',
-    image: 'https://picsum.photos/400/300?random=10',
-    skills: ['Deep Learning', 'Computer Vision', 'NLP'],
-    description: 'This certification verifies advanced proficiency in the core concepts and practical applications of TensorFlow for building and training neural networks.'
-  },
-  {
-    id: '2',
-    name: 'Certified Ethical Hacker (Practical)',
-    issuer: 'EC-Council',
-    date: 'May 2025',
-    image: 'https://picsum.photos/400/300?random=11',
-    skills: ['Penetration Testing', 'Kali Linux', 'Network Security'],
-    description: 'Validates hands-on skills in ethical hacking, covering threat vector identification, network scanning, and vulnerability assessment in a real-world environment.'
-  },
-  {
-    id: '3',
-    name: 'Machine Learning Specialization',
-    issuer: 'Coursera (Stanford)',
-    date: 'Dec 2025',
-    image: 'https://picsum.photos/400/300?random=12',
-    skills: ['Supervised Learning', 'Unsupervised Learning', 'Regression'],
-    description: 'A comprehensive specialization covering the most effective machine learning techniques, including supervised and unsupervised learning, best practices in AI, and practical case studies.'
   },
 ];

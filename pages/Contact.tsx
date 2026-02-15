@@ -55,11 +55,11 @@ const Contact: React.FC = () => {
 
                             {/* QR Code Section */}
                             <div className="flex flex-col items-center gap-2 group/qr">
-                                <div className="w-24 h-24 p-2 bg-white/10 backdrop-blur-md rounded-2xl border border-white/20 transition-all duration-500 group-hover/qr:scale-110 group-hover/qr:bg-white/20 shadow-lg">
+                                <div className="w-24 h-24 p-2 bg-white rounded-2xl transition-all duration-500 group-hover/qr:scale-110 shadow-lg">
                                     <img
                                         src="/qr-code.svg"
                                         alt="QR Code"
-                                        className="w-full h-full object-contain filter brightness-0 invert"
+                                        className="w-full h-full object-contain"
                                     />
                                 </div>
                                 <span className="text-[9px] font-bold tracking-[0.2em] uppercase text-white/50 group-hover/qr:text-white/80 transition-colors duration-300">

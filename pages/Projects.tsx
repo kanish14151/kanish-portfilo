@@ -71,19 +71,19 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, onClick }) => {
                 key={img}
                 src={img}
                 alt={`${project.title} - ${idx + 1}`}
-                className={`absolute inset-0 w-full h-full object-cover transition-all duration-700 ${idx === currentImageIndex
-                  ? isTransitioning
-                    ? 'translate-x-[-100%] opacity-0'
-                    : 'translate-x-0 opacity-100'
-                  : idx === (currentImageIndex + 1) % project.images!.length
-                    ? isTransitioning
-                      ? 'translate-x-0 opacity-100'
-                      : 'translate-x-[100%] opacity-0'
-                    : 'translate-x-[100%] opacity-0'
+                className={`absolute inset-0 w-full h-full object-cover transition-all duration-700 ${idx === currentImageIndex ? (isTransitioning ? 'opacity-0' : 'opacity-100') : (idx === (currentImageIndex + 1) % project.images!.length && isTransitioning ? 'opacity-100' : 'opacity-0')
                   }`}
                 style={{
                   transition: 'transform 0.7s ease-in-out, opacity 0.7s ease-in-out',
-                  transform: `translate(var(--mouse-x, 0px), var(--mouse-y, 0px)) ${idx === currentImageIndex && !isTransitioning ? 'scale(1.1)' : 'scale(1)'
+                  transform: `translate(var(--mouse-x, 0px), var(--mouse-y, 0px)) ${idx === currentImageIndex
+                      ? isTransitioning
+                        ? 'translateX(-100%)'
+                        : 'translateX(0) scale(1.1)'
+                      : idx === (currentImageIndex + 1) % project.images!.length
+                        ? isTransitioning
+                          ? 'translateX(0)'
+                          : 'translateX(100%)'
+                        : 'translateX(100%)'
                     }`
                 }}
               />
@@ -185,14 +185,14 @@ const ProjectDetail: React.FC<{ project: Project }> = ({ project }) => {
                 src={img}
                 alt={`${project.title} - ${idx + 1}`}
                 className={`absolute inset-0 w-full h-full object-contain transition-all duration-700 ${idx === currentImageIndex
+                  ? isTransitioning
+                    ? 'translate-x-[-100%] opacity-0'
+                    : 'translate-x-0 opacity-100'
+                  : idx === (currentImageIndex + 1) % project.images!.length
                     ? isTransitioning
-                      ? 'translate-x-[-100%] opacity-0'
-                      : 'translate-x-0 opacity-100'
-                    : idx === (currentImageIndex + 1) % project.images!.length
-                      ? isTransitioning
-                        ? 'translate-x-0 opacity-100'
-                        : 'translate-x-[100%] opacity-0'
+                      ? 'translate-x-0 opacity-100'
                       : 'translate-x-[100%] opacity-0'
+                    : 'translate-x-[100%] opacity-0'
                   }`}
                 style={{
                   transition: 'transform 0.7s ease-in-out, opacity 0.7s ease-in-out'

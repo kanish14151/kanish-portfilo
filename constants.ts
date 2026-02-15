@@ -42,12 +42,15 @@ export const PROJECTS: Project[] = [
   },
   {
     id: '3',
-    title: 'Eco-Vision AI',
-    category: 'AI/ML',
-    description: 'Computer vision system for automated waste segregation.',
-    longDescription: 'Addressing the global waste management crisis, Eco-Vision uses Convolutional Neural Networks (CNNs) to classify waste items into recyclable, organic, and hazardous categories in real-time via video feed. Deployed on edge devices for smart bin integration.',
-    technologies: ['OpenCV', 'TensorFlow Lite', 'Python', 'Raspberry Pi'],
-    image: 'https://picsum.photos/800/600?random=3',
+    title: 'Agri AI',
+    category: 'AI Agriculture',
+    description: 'A cutting-edge agricultural intelligence platform empowering farmers with data-driven insights.',
+    longDescription: `Agri AI is a cutting-edge agricultural intelligence platform that combines computer vision, geospatial analysis, and natural language processing to empower farmers and agricultural professionals with data-driven insights. This revolutionary tool leverages AI to transform traditional farming practices into smart, sustainable agriculture.\n\n✨ Features\n• 🔬 AI Plant Analysis: Upload plant images for instant disease detection and personalized treatment recommendations\n• 🗺️ Interactive Maps: Select and analyze land areas with advanced Mapbox integration for detailed agricultural insights\n• 🌐 Multi-language Support: Seamlessly available in English, Hindi, Punjabi, Tamil, Telugu, and Marathi\n• 🌤️ Weather Integration: Access real-time agricultural weather data and forecasts\n• 💬 Smart Chatbot: AI-powered agricultural advisor providing expert guidance with an enhanced conversational experience\n• 📊 Land Analysis: Draw specific land areas to receive comprehensive analysis of soil quality, climate conditions, and agricultural potential\n• 🌱 Crop Recommendations: Data-driven suggestions for optimal crop selection based on local conditions`,
+    technologies: ['React', 'Mapbox', 'Computer Vision', 'NLP', 'Weather API'],
+    image: '/agri-1.png',
+    images: ['/agri-1.png', '/agri-2.png', '/agri-3.png'],
+    liveLink: 'https://agri-ai-puce-xi.vercel.app/',
+    repoLink: 'https://github.com/tomo-academy/Agri-AI.git'
   },
   {
     id: '4',

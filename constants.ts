@@ -131,6 +131,36 @@ export const CERTIFICATIONS: Certification[] = [
     ]
   },
   {
+    id: 'kumarakuru-ideathon-2025',
+    name: "Kosmorena '25 – Ideathon Participation",
+    issuer: 'Kumaraguru College of Technology',
+    date: 'Oct 2025',
+    image: '/kumarakuru.jpeg',
+    skills: ['Ideation', 'Space Tech', 'Problem Solving', 'Space Week'],
+    description: "Participated in the Ideathon organized by Kumaraguru SEDS as part of Kosmorena '25 during International Space Week (6-8 October 2025) at Kumaraguru College of Technology.",
+    link: '#',
+    meta: [
+      { label: 'Event', value: "Kosmorena '25 (Ideathon)" },
+      { label: 'Organizer', value: 'Kumaraguru SEDS' },
+      { label: 'Theme', value: 'International Space Week' }
+    ]
+  },
+  {
+    id: 'spark-25-hackathon',
+    name: "SPARK'25 – 10 Hours Hackathon",
+    issuer: 'Sona College of Technology',
+    date: 'Sep 2025',
+    image: '/spark.jpeg',
+    skills: ['Hackathon', 'Competitive Coding', 'Rapid Prototyping', 'Problem Solving'],
+    description: "Participated in the 10 Hours Hackathon challenge at SPARK'25 conducted on 26th September 2025 at Sona College of Technology, organized by the Department of Computer Science and Engineering.",
+    link: '#',
+    meta: [
+      { label: 'Event', value: "SPARK'25" },
+      { label: 'Format', value: '10 Hours Hackathon Challenge' },
+      { label: 'Dept', value: 'Computer Science and Engineering' }
+    ]
+  },
+  {
     id: 'sona-titans-2025',
     name: 'Sona Titans – Training Participation',
     issuer: 'Sona College of Technology',

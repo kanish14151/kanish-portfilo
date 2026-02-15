@@ -1,5 +1,5 @@
 <div align="center">
-<img src="/public/aj-logo.png" width="160" height="160" alt="AJ STUDIOZ Logo" />
+<img src="public/aj-logo.png" width="120" height="120" alt="AJ STUDIOZ Logo" />
 
 <h3>Developed by AJ STUDIOZ</h3>
 </div>

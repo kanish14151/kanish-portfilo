@@ -12,12 +12,17 @@ interface ProjectCardProps {
 const ProjectCard: React.FC<ProjectCardProps> = ({ project, onClick }) => {
   const cardRef = useRef<HTMLDivElement>(null);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [isTransitioning, setIsTransitioning] = useState(false);
 
   useEffect(() => {
     if (project.images && project.images.length > 1) {
       const interval = setInterval(() => {
-        setCurrentImageIndex((prev) => (prev + 1) % project.images!.length);
-      }, 300); // 0.3 seconds interval for rapid-fire feel
+        setIsTransitioning(true);
+        setTimeout(() => {
+          setCurrentImageIndex((prev) => (prev + 1) % project.images!.length);
+          setIsTransitioning(false);
+        }, 500);
+      }, 3000); // 3 seconds interval
       return () => clearInterval(interval);
     }
   }, [project.images]);
@@ -58,20 +63,27 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, onClick }) => {
           {project.category}
         </div>
 
-        {/* Parallax Image Wrapper */}
-        <div className="w-full h-full relative transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-105">
-          {project.images && project.images.length > 1 ? (
+        {/* Sliding Image Strip - Ported from TOMO */}
+        <div className="relative w-full h-full overflow-hidden">
+          {project.images && project.images.length > 0 ? (
             project.images.map((img, idx) => (
               <img
                 key={img}
                 src={img}
-                alt={project.title}
-                className={`absolute inset-0 w-full h-full object-cover transition-all duration-[300ms] ease-out will-change-transform ${idx === currentImageIndex
-                  ? 'opacity-100 translate-x-0 scale-110'
-                  : 'opacity-0 translate-x-12 scale-100'
+                alt={`${project.title} - ${idx + 1}`}
+                className={`absolute inset-0 w-full h-full object-cover transition-all duration-700 ${idx === currentImageIndex
+                  ? isTransitioning
+                    ? 'translate-x-[-100%] opacity-0'
+                    : 'translate-x-0 opacity-100'
+                  : idx === (currentImageIndex + 1) % project.images!.length
+                    ? isTransitioning
+                      ? 'translate-x-0 opacity-100'
+                      : 'translate-x-[100%] opacity-0'
+                    : 'translate-x-[100%] opacity-0'
                   }`}
                 style={{
-                  transform: `translate(var(--mouse-x, 0px), var(--mouse-y, 0px)) ${idx === currentImageIndex ? 'scale(1.1)' : 'scale(1)'
+                  transition: 'transform 0.7s ease-in-out, opacity 0.7s ease-in-out',
+                  transform: `translate(var(--mouse-x, 0px), var(--mouse-y, 0px)) ${idx === currentImageIndex && !isTransitioning ? 'scale(1.1)' : 'scale(1)'
                     }`
                 }}
               />
@@ -80,11 +92,24 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, onClick }) => {
             <img
               src={project.image}
               alt={project.title}
-              className="w-full h-full object-cover transition-transform duration-200 ease-out will-change-transform opacity-100 dark:opacity-90"
+              className="w-full h-full min-w-full object-cover opacity-100 dark:opacity-90"
               style={{
                 transform: 'translate(var(--mouse-x, 0px), var(--mouse-y, 0px))'
               }}
             />
+          )}
+
+          {/* Dots Indicator */}
+          {project.images && project.images.length > 1 && (
+            <div className="absolute bottom-4 right-4 flex gap-1.5 z-30">
+              {project.images.map((_, idx) => (
+                <div
+                  key={idx}
+                  className={`w-1.5 h-1.5 rounded-full transition-all duration-300 ${idx === currentImageIndex ? 'bg-primary w-4' : 'bg-white/60'
+                    }`}
+                />
+              ))}
+            </div>
           )}
         </div>
       </div>
@@ -127,12 +152,17 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, onClick }) => {
 const ProjectDetail: React.FC<{ project: Project }> = ({ project }) => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [animate, setAnimate] = useState(false);
+  const [isTransitioning, setIsTransitioning] = useState(false);
 
   useEffect(() => {
     if (project.images && project.images.length > 1) {
       const interval = setInterval(() => {
-        setCurrentImageIndex((prev) => (prev + 1) % project.images!.length);
-      }, 300); // 0.3 seconds interval for rapid-fire feel
+        setIsTransitioning(true);
+        setTimeout(() => {
+          setCurrentImageIndex((prev) => (prev + 1) % project.images!.length);
+          setIsTransitioning(false);
+        }, 500);
+      }, 3000); // 3 seconds interval
       return () => clearInterval(interval);
     }
   }, [project.images]);
@@ -146,25 +176,48 @@ const ProjectDetail: React.FC<{ project: Project }> = ({ project }) => {
     <div className="bg-white dark:bg-slate-dark text-slate-900 dark:text-white transition-colors duration-300 overflow-hidden">
       {/* Header Image - Increased height for full fitted view */}
       <div className="h-80 md:h-[500px] w-full relative overflow-hidden bg-gray-100 dark:bg-slate-medium">
-        <div className="w-full h-full relative">
-          {project.images && project.images.length > 1 ? (
+        {/* Sliding Image Strip - Ported from TOMO */}
+        <div className="relative w-full h-full overflow-hidden">
+          {project.images && project.images.length > 0 ? (
             project.images.map((img, idx) => (
               <img
                 key={img}
                 src={img}
-                alt={project.title}
-                className={`absolute inset-0 w-full h-full object-contain transition-all duration-[300ms] ease-out ${idx === currentImageIndex
-                  ? 'opacity-100 scale-110 translate-x-0'
-                  : 'opacity-0 scale-100 translate-x-12'
+                alt={`${project.title} - ${idx + 1}`}
+                className={`absolute inset-0 w-full h-full object-contain transition-all duration-700 ${idx === currentImageIndex
+                    ? isTransitioning
+                      ? 'translate-x-[-100%] opacity-0'
+                      : 'translate-x-0 opacity-100'
+                    : idx === (currentImageIndex + 1) % project.images!.length
+                      ? isTransitioning
+                        ? 'translate-x-0 opacity-100'
+                        : 'translate-x-[100%] opacity-0'
+                      : 'translate-x-[100%] opacity-0'
                   }`}
+                style={{
+                  transition: 'transform 0.7s ease-in-out, opacity 0.7s ease-in-out'
+                }}
               />
             ))
           ) : (
             <img
               src={project.image}
               alt={project.title}
-              className={`w-full h-full object-contain transition-transform duration-[2.5s] ease-[cubic-bezier(0.16,1,0.3,1)] will-change-transform ${animate ? 'scale-110' : 'scale-100'}`}
+              className={`w-full h-full min-w-full object-contain transition-transform duration-[2.5s] ease-[cubic-bezier(0.16,1,0.3,1)] will-change-transform ${animate ? 'scale-110' : 'scale-100'}`}
             />
+          )}
+
+          {/* Dots Indicator */}
+          {project.images && project.images.length > 1 && (
+            <div className="absolute bottom-16 right-8 flex gap-1.5 z-30">
+              {project.images.map((_, idx) => (
+                <div
+                  key={idx}
+                  className={`w-2 h-2 rounded-full transition-all duration-300 ${idx === currentImageIndex ? 'bg-primary w-6' : 'bg-white/60'
+                    }`}
+                />
+              ))}
+            </div>
           )}
         </div>
         <div className="absolute inset-0 bg-gradient-to-t from-slate-900/40 to-transparent pointer-events-none"></div>

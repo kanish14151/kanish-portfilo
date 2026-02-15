@@ -17,7 +17,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, onClick }) => {
     if (project.images && project.images.length > 1) {
       const interval = setInterval(() => {
         setCurrentImageIndex((prev) => (prev + 1) % project.images!.length);
-      }, 300); // 0.3 seconds for rapid transition
+      }, 5000); // 5 seconds interval for professional corporate feel
       return () => clearInterval(interval);
     }
   }, [project.images]);
@@ -31,8 +31,8 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, onClick }) => {
     const y = (e.clientY - rect.top) / rect.height - 0.5;
 
     // Update CSS variables for translation
-    cardRef.current.style.setProperty('--mouse-x', `${x * -15}px`);
-    cardRef.current.style.setProperty('--mouse-y', `${y * -15}px`);
+    cardRef.current.style.setProperty('--mouse-x', `${x * -10}px`);
+    cardRef.current.style.setProperty('--mouse-y', `${y * -10}px`);
   };
 
   const handleMouseLeave = () => {
@@ -40,10 +40,6 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, onClick }) => {
     cardRef.current.style.setProperty('--mouse-x', '0px');
     cardRef.current.style.setProperty('--mouse-y', '0px');
   };
-
-  const displayImage = project.images && project.images.length > 0
-    ? project.images[currentImageIndex]
-    : project.image;
 
   return (
     <div
@@ -53,8 +49,8 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, onClick }) => {
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
     >
-      {/* Image Container - Highly rounded */}
-      <div className="relative h-52 w-full rounded-[2rem] overflow-hidden bg-gray-100 dark:bg-slate-dark text-black dark:text-white">
+      {/* Image Container - Increased height */}
+      <div className="relative h-60 w-full rounded-[2rem] overflow-hidden bg-gray-100 dark:bg-slate-dark text-black dark:text-white">
         <div className="absolute inset-0 bg-primary/0 group-hover:bg-primary/5 transition-colors z-10 duration-500"></div>
 
         {/* Floating Category Badge */}
@@ -70,9 +66,13 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, onClick }) => {
                 key={img}
                 src={img}
                 alt={project.title}
-                className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-150 ease-in-out will-change-transform opacity-100 dark:opacity-90 ${idx === currentImageIndex ? 'opacity-100' : 'opacity-0'}`}
+                className={`absolute inset-0 w-full h-full object-cover transition-all duration-[2000ms] ease-[cubic-bezier(0.4,0,0.2,1)] will-change-transform ${idx === currentImageIndex
+                  ? 'opacity-100 translate-x-0 scale-110'
+                  : 'opacity-0 translate-x-12 scale-100'
+                  }`}
                 style={{
-                  transform: 'translate(var(--mouse-x, 0px), var(--mouse-y, 0px))'
+                  transform: `translate(var(--mouse-x, 0px), var(--mouse-y, 0px)) ${idx === currentImageIndex ? 'scale(1.1)' : 'scale(1)'
+                    }`
                 }}
               />
             ))
@@ -132,7 +132,7 @@ const ProjectDetail: React.FC<{ project: Project }> = ({ project }) => {
     if (project.images && project.images.length > 1) {
       const interval = setInterval(() => {
         setCurrentImageIndex((prev) => (prev + 1) % project.images!.length);
-      }, 300); // 0.3 seconds for rapid transition
+      }, 5000); // Corrected to 5 seconds for elegant feel
       return () => clearInterval(interval);
     }
   }, [project.images]);
@@ -144,8 +144,8 @@ const ProjectDetail: React.FC<{ project: Project }> = ({ project }) => {
 
   return (
     <div className="bg-white dark:bg-slate-dark text-slate-900 dark:text-white transition-colors duration-300 overflow-hidden">
-      {/* Header Image */}
-      <div className="h-56 md:h-72 w-full relative overflow-hidden">
+      {/* Header Image - Increased height for full fitted view */}
+      <div className="h-80 md:h-[500px] w-full relative overflow-hidden bg-gray-100 dark:bg-slate-medium">
         <div className="w-full h-full relative">
           {project.images && project.images.length > 1 ? (
             project.images.map((img, idx) => (
@@ -153,23 +153,26 @@ const ProjectDetail: React.FC<{ project: Project }> = ({ project }) => {
                 key={img}
                 src={img}
                 alt={project.title}
-                className={`absolute inset-0 w-full h-full object-cover transition-all duration-[1.5s] ease-[cubic-bezier(0.16,1,0.3,1)] will-change-transform ${animate ? 'scale-100' : 'scale-110'} ${idx === currentImageIndex ? 'opacity-100' : 'opacity-0'} transition-opacity duration-150`}
+                className={`absolute inset-0 w-full h-full object-contain transition-all duration-[2500ms] ease-[cubic-bezier(0.4,0,0.2,1)] ${idx === currentImageIndex
+                  ? 'opacity-100 scale-110 translate-x-0'
+                  : 'opacity-0 scale-100 translate-x-12'
+                  }`}
               />
             ))
           ) : (
             <img
               src={project.image}
               alt={project.title}
-              className={`w-full h-full object-cover transition-transform duration-[1.5s] ease-[cubic-bezier(0.16,1,0.3,1)] will-change-transform ${animate ? 'scale-100' : 'scale-110'}`}
+              className={`w-full h-full object-contain transition-transform duration-[2.5s] ease-[cubic-bezier(0.16,1,0.3,1)] will-change-transform ${animate ? 'scale-110' : 'scale-100'}`}
             />
           )}
         </div>
-        <div className="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/20 to-transparent"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-slate-900/40 to-transparent pointer-events-none"></div>
         <div className="absolute bottom-6 left-6 right-6 md:left-8 md:right-8">
           <span className="inline-block px-2.5 py-1 mb-3 bg-book-cloth/90 backdrop-blur-md text-white text-[10px] font-bold uppercase tracking-widest rounded-md shadow-sm">
             {project.category}
           </span>
-          <h2 className="text-2xl md:text-4xl font-serif font-bold text-white shadow-sm leading-tight">
+          <h2 className="text-2xl md:text-3xl font-serif font-bold text-white shadow-lg leading-tight">
             {project.title}
           </h2>
         </div>

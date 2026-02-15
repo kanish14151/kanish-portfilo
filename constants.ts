@@ -3,7 +3,7 @@ import { Project, Achievement, Certification } from './types';
 export const NAV_ITEMS = [
   { label: 'Home', path: '/' },
   { label: 'About', path: '/about' },
-  { label: 'Initiatives', path: '/projects' },
+  { label: 'Projects', path: '/projects' },
   { label: 'Achievements', path: '/achievements' },
   { label: 'Certifications', path: '/certifications' },
   { label: 'Contact', path: '/contact' },
@@ -21,12 +21,15 @@ export const SKILLS = [
 export const PROJECTS: Project[] = [
   {
     id: '1',
-    title: 'AI for Social Justice',
-    category: 'Social Impact',
-    description: 'Leveraging NLP to analyze legal texts for bias detection.',
-    longDescription: 'An ambitious project aiming to democratize legal understanding. By utilizing Natural Language Processing (NLP) and transformer models, this tool analyzes historical legal verdicts to identify potential biases based on gender and ethnicity. It provides a transparency score for legal documents, helping activists and lawyers build fairer cases.',
-    technologies: ['Python', 'BERT', 'Pandas', 'Flask'],
-    image: 'https://picsum.photos/800/600?random=1',
+    title: 'TOMO chat',
+    category: 'AI Platform',
+    description: 'An all-in-one AI chatbot platform with GPT-4, Claude, Gemini, and 10+ models.',
+    longDescription: `TOMO chat is an all-in-one AI chatbot platform where you can:\n\n• Chat with GPT-4, Claude, Gemini, and 10+ other AI models\n• Use powerful tools (web search, code execution, file analysis)\n• Generate images with AI\n• Voice chat with AI\n• Create custom AI agents\n• Visualize data\n• Connect with MCP tools\n• Share with teams\n\nPerfect for homework, coding projects, research, or just exploring AI!`,
+    technologies: ['Next.js', 'Vercel AI SDK', 'OpenAI', 'Anthropic', 'Google AI'],
+    image: '/tomo-2.jpeg',
+    images: ['/tomo-2.jpeg', '/tomo-1.jpeg'],
+    liveLink: 'https://chat.tomoacademy.site',
+    repoLink: 'https://github.com/ZAYATHON/AI-avengers-07.git'
   },
   {
     id: '2',

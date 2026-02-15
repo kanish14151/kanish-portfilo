@@ -1,12 +1,14 @@
 export interface Project {
   id: string;
   title: string;
-  category: 'Social Impact' | 'AI/ML' | 'Web Dev' | 'Mentorship';
+  category: string;
   description: string;
   longDescription: string;
   technologies: string[];
   image: string;
-  link?: string;
+  images?: string[];
+  liveLink?: string;
+  repoLink?: string;
 }
 
 export interface Achievement {

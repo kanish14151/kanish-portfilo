@@ -51,14 +51,7 @@ const CertificationCard: React.FC<CertificationCardProps> = ({ cert, onClick }) 
                 </div>
 
                 {/* Footer - Pushed to Bottom */}
-                <div className="mt-auto pt-3 flex items-center justify-between border-t border-black/5 dark:border-white/5">
-                    <div className="flex flex-wrap gap-1">
-                        {cert.skills.slice(0, 3).map(skill => (
-                            <span key={skill} className="px-1.5 py-0.5 bg-gray-50 dark:bg-white/5 text-slate-500 dark:text-tertiary rounded text-[8px] font-bold uppercase tracking-tight">
-                                {skill}
-                            </span>
-                        ))}
-                    </div>
+                <div className="mt-auto pt-3 flex items-center justify-end border-t border-black/5 dark:border-white/5">
 
                     <button className="flex items-center gap-1.5 text-[9px] font-extrabold uppercase tracking-widest text-slate-900 dark:text-white group/btn shrink-0 ml-2">
                         View

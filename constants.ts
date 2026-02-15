@@ -150,7 +150,7 @@ export const CERTIFICATIONS: Certification[] = [
     name: 'Tamil Cultural Preservation',
     issuer: 'JACKHI Book of Talents',
     date: '2026',
-    image: 'https://images.unsplash.com/photo-1582213726852-2993521bb425?q=80&w=2070&auto=format&fit=crop',
+    image: '/tamil.jpeg',
     skills: ['Culture', 'Language'],
     description: 'Recognizing and promoting Tamil language and cultural heritage through the JACKHI Book of Talents initiative.',
     link: '#'
@@ -160,7 +160,7 @@ export const CERTIFICATIONS: Certification[] = [
     name: 'Youth Art Program',
     issuer: 'VARNAM National Painting Competition',
     date: '2026',
-    image: 'https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?q=80&w=2080&auto=format&fit=crop',
+    image: '/varnam.jpeg',
     skills: ['Art', 'Youth'],
     description: 'Empowering young artists through the VARNAM National Painting Competition, providing a platform for creative expression and recognition.',
     link: '#'

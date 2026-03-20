@@ -8,7 +8,7 @@ const About: React.FC = () => {
                 <FadeIn>
                     <div className="flex flex-col md:flex-row gap-12 items-center mb-20">
                         {/* Image */}
-                        <div className="w-full md:w-1/2 aspect-square overflow-hidden relative group">
+                        <div className="w-full md:w-1/2 aspect-square rounded-full overflow-hidden relative group">
                             <img
                                 src="/crop-kanish.png"
                                 alt="SJ Kanish"

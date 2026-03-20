@@ -63,7 +63,7 @@ const Contact: React.FC = () => {
                                     />
                                 </div>
                                 <span className="text-[9px] font-bold tracking-[0.2em] uppercase text-white/50 group-hover/qr:text-white/80 transition-colors duration-300">
-                                    KANISH - PORTFOLIO
+                                    AJ STUDIOZ
                                 </span>
                             </div>
                         </div>

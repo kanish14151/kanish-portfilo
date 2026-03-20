@@ -26,7 +26,7 @@ const Footer: React.FC = () => {
                         <div className="flex flex-col items-center gap-2 group/qr">
                             <div className="w-16 h-16 p-1.5 bg-white rounded-xl shadow-sm transition-all duration-500 group-hover/qr:scale-110">
                                 <img
-                                    src="/qr-code.svg"
+                                    src="/qr-code-styling.svg"
                                     alt="QR Code"
                                     className="w-full h-full object-contain"
                                 />

@@ -57,7 +57,7 @@ const Contact: React.FC = () => {
                             <div className="flex flex-col items-center gap-2 group/qr">
                                 <div className="w-24 h-24 p-2 bg-white rounded-2xl transition-all duration-500 group-hover/qr:scale-110 shadow-lg">
                                     <img
-                                        src="/qr-code.svg"
+                                        src="/qr-code-styling.svg"
                                         alt="QR Code"
                                         className="w-full h-full object-contain"
                                     />

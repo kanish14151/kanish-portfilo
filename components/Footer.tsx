@@ -40,22 +40,16 @@ const Footer: React.FC = () => {
 
                 <div className="mt-16 pt-8 border-t border-gray-100 dark:border-white/5 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-gray-400 dark:text-tertiary">
                     <p>&copy; 2028 SJ Kanish. All rights reserved.</p>
-                    <div className="flex flex-col items-center md:items-end gap-4">
-                        <div className="flex items-center gap-2 group/aj">
-                            <span className="opacity-70">Developed by</span>
-                            <a href="#" className="flex items-center gap-2 font-bold text-slate-900 dark:text-white hover:text-book-cloth transition-all tracking-wide">
-                                <img
-                                    src="/aj-logo.png"
-                                    alt="AJ Logo"
-                                    className="w-6 h-6 object-contain rounded-full border border-gray-200 dark:border-white/10 filter grayscale group-hover/aj:grayscale-0 transition-all duration-500"
-                                />
-                                <span>AJ STUDIOZ</span>
-                            </a>
-                        </div>
-                        <div className="px-3 py-1 bg-slate-100 dark:bg-white/5 rounded-full border border-gray-200 dark:border-white/10 flex items-center gap-2">
-                            <span className="w-1.5 h-1.5 rounded-full bg-book-cloth animate-pulse"></span>
-                            <span className="text-[10px] font-bold uppercase tracking-widest text-slate-600 dark:text-white/60">Made by AJ STUDIOZ</span>
-                        </div>
+                    <div className="flex items-center gap-2 group/aj">
+                        <span className="opacity-70">Developed by</span>
+                        <a href="#" className="flex items-center gap-2 font-bold text-slate-900 dark:text-white hover:text-book-cloth transition-all tracking-wide">
+                            <img
+                                src="/aj-logo.png"
+                                alt="AJ Logo"
+                                className="w-6 h-6 object-contain rounded-full border border-gray-200 dark:border-white/10 filter grayscale group-hover/aj:grayscale-0 transition-all duration-500"
+                            />
+                            <span>AJ STUDIOZ</span>
+                        </a>
                     </div>
                 </div>
             </div>

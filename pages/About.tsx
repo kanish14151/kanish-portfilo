@@ -10,7 +10,7 @@ const About: React.FC = () => {
                         {/* Image */}
                         <div className="w-full md:w-1/2 aspect-[4/5] rounded-[2.5rem] overflow-hidden relative shadow-2xl group">
                             <img
-                                src="/kanish.jpg"
+                                src="/crop-kanish.png"
                                 alt="SJ Kanish"
                                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                             />
